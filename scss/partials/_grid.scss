@@ -25,11 +25,7 @@ html {
 *:before,
 *:after {box-sizing: inherit;}
 
-section {width:90%;}
-
-.row {@extend %clearfix;margin: 0;background:red;
-    img {width:100%;height:auto;}
-}
+.row {@extend %clearfix;margin: 0;}
 
 [class*='column-'],
 [class*='m-column-']{
@@ -45,6 +41,8 @@ section {width:90%;}
     .column-#{$i}-#{$column-number},
     .m-column-#{$i}-#{$column-number} {
         @include column($i);
+        @include mediaquery($tablet) {@include column($i);}
+        @include mediaquery($desktop) {@include column($i);}
     }
 }
 

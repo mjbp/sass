@@ -1,16 +1,15 @@
 // Path alias
-$assetPath :                '../';
-$imgPath:                   '#{$assetPath}img/ui';
-$fontPath :                 '../font';
+$assetPath :                '/assets/';
 
 // Type
 // --------------------------------------------------
 // Font weights
-$thin: 100;
-$light: 300;
-$regular: 400;
-$semibold: 600;
-$bold: 700;
+$thin:                      100;
+$light:                     300;
+$regular:                   400;
+$semibold:                  600;
+$bold:                      700;
+$thick:                     800;
 
 // Base Font
 $base-font-family:          arial,sans-serif !default;
@@ -20,19 +19,17 @@ $base-line-height:          1.5 !default;
 $base-margin-bottom:        1rem !default;
 
 // Headings
-$header-font-family:        'adelle', serif !default;
+$header-font-family:        serif !default;
 $header-font-weight:        $regular !default;
-$header-font-size:          1.067rem !default;
+$header-font-size:          1.1rem !default;
 
 $body-font-size:            1rem !default;
 
-$tertiary-font-family:      'pt-serif', serif !default;
-
-$script-font-family:        'kremlin-pro-web-expanded', serif !default;
 
 // Media queries
 // --------------------------------------------------
-$desktop:                   1024px !default;
+$ipad:                      768px !default;
+$desktop:                   1025px !default;
 
 // Layout
 // --------------------------------------------------
@@ -45,24 +42,10 @@ $mobile-gutter-main:        8% !default;
 // Colors
 // -------------------------
 $primary-color:             #0099cc !default;
-$red-color:                 #7c152c !default;
+$secondary-color:           #7c152c !default;
 $light-grey-color:          #cecece !default;
-$grey-bg-color:             #f0f0f0 !default;
-$dark-grey-color:           #4a4a4a !default;
-$dark-blue-color:           #046c8f !default;
-$light-blue-color:          #44cefc !default;
-$red-heading-color:         #c13a3e !default;
 
 $body-text-color:           #767676 !default;
-$dark-text-color:           #000 !default;
-$dark-blue-text-color:      #000099 !default;
 
-$link-color:                $primary-color !default;
+$link-color:                $secondary-color !default;
 $link-hover-color:          $primary-color !default;
-    
-// Backgrounds
-// -------------------------
-$body-bg:                   #fff !default;
-$footer-bg:                 $primary-color !default;
-$grey-bg:                   #f0f0f0 !default;
-$blue-bg:                   #eaf6fa !default;
