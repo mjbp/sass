@@ -3,13 +3,14 @@
 @import "_variables";
 @import "partials/normalize";
 @import "mixins/mediaquery";
+@import "mixins/baseline";
 @import "mixins/remcalc";
-@import "mixins/opaciy";
+@import "mixins/opacity";
 @import "mixins/animation";
 @import "mixins/transition";
 @import "modules/clearfix";
 @import "modules/ir";
-@import "modules/button";s
+@import "modules/button";
 @import "partials/type";
 @import "partials/grid";
 @import "partials/webfonts";

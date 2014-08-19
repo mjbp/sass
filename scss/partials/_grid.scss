@@ -1,8 +1,6 @@
 /* Grid
 ----------------------------- */
-$column-number: 12;
-$gutter: 2%;
-
+//$gutter: 2%;
 $column-width: (100% - ($gutter * ($column-number - 1))) / $column-number;
     
 // calculate column width
@@ -11,13 +9,6 @@ $column-width: (100% - ($gutter * ($column-number - 1))) / $column-number;
     margin-left:$gutter;
 }
 
-/*
-- add mobile grid support (-m suffix)
-    - defaults to single column
-- add height equilizer js
-
-*/
-
 html {
     box-sizing:border-box;
 }
@@ -25,7 +16,9 @@ html {
 *:before,
 *:after {box-sizing: inherit;}
 
-.row {@extend %clearfix;margin: 0;}
+body {@include baseline();}
+
+.row {@extend %clearfix;margin: 0 0 $baseline 0;}
 
 [class*='column-'],
 [class*='m-column-']{
@@ -41,8 +34,6 @@ html {
     .column-#{$i}-#{$column-number},
     .m-column-#{$i}-#{$column-number} {
         @include column($i);
-        @include mediaquery($tablet) {@include column($i);}
-        @include mediaquery($desktop) {@include column($i);}
     }
 }
 

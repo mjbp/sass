@@ -1,5 +1,7 @@
 // Path alias
-$assetPath :                '/assets/';
+$assetPath:                '/assets/';
+$fontPath:                 '#{$assetPath}/font/';
+$uiImgPath:                '#{$assetPath}/img/ui/';
 
 // Type
 // --------------------------------------------------
@@ -12,11 +14,10 @@ $bold:                      700;
 $thick:                     800;
 
 // Base Font
+$baseline:                  1.5rem !default;
 $base-font-family:          arial,sans-serif !default;
 $base-font-weight:          $regular !default;
 $base-font-size:            16px !default;
-$base-line-height:          1.5 !default;
-$base-margin-bottom:        1rem !default;
 
 // Headings
 $header-font-family:        serif !default;
@@ -28,16 +29,14 @@ $body-font-size:            1rem !default;
 
 // Media queries
 // --------------------------------------------------
-$ipad:                      768px !default;
+$tablet:                    768px !default;
 $desktop:                   1025px !default;
 
 // Layout
 // --------------------------------------------------
-$main-width:                820px !default;
-$vertical-padding:          35px !default;
-$gutter:                    35px / $main-width * 100 !default;
-$mobile-gutter:             5% !default;
-$mobile-gutter-main:        8% !default;
+$column-number:             12;
+$max-width:                 960px !default;
+$gutter:                    (20px / $max-width) * 100% !default;
 
 // Colors
 // -------------------------
