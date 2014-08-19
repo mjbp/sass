@@ -1,0 +1,59 @@
+/* Grid
+----------------------------- */
+$column-number: 12;
+$gutter: 2%;
+
+$column-width: (100% - ($gutter * ($column-number - 1))) / $column-number;
+    
+// calculate column width
+@mixin column($num) {
+    width: ($column-width * $num) + ($gutter * ($num - 1));
+    margin-left:$gutter;
+}
+
+/*
+- add mobile grid support (-m suffix)
+    - defaults to single column
+- add height equilizer js
+
+*/
+
+html {
+    box-sizing:border-box;
+}
+*,
+*:before,
+*:after {box-sizing: inherit;}
+
+section {width:90%;}
+
+.row {@extend %clearfix;margin: 0;background:red;
+    img {width:100%;height:auto;}
+}
+
+[class*='column-'],
+[class*='m-column-']{
+  float: left;
+  margin-left:$gutter;
+  border:1px solid #f1f1f1;
+  &:first-of-type {
+    margin-left: 0;
+  }
+}
+
+@for $i from 1 through $column-number {
+    .column-#{$i}-#{$column-number},
+    .m-column-#{$i}-#{$column-number} {
+        @include column($i);
+    }
+}
+
+/* Outside pad the row */
+.row--padded {
+  padding:0 0 0 $gutter;
+  [class*='column-']:last-of-type {
+    padding-left:$gutter;
+  }
+}
+
+.column-centre {margin-left:auto;margin-right:auto;}

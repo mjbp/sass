@@ -1,0 +1,37 @@
+// rem-calc based on foundation
+// usage: see below;
+
+$rem-base: $base-font-size;
+    
+// Strip unit
+// It strips the unit of measure and returns it
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+// CONVERT TO REM
+@function convert-to-rem($value)  {
+  $value: strip-unit($value) / strip-unit($rem-base) * 1rem;
+  @if ($value == 0rem) { $value: 0; } // Turn 0rem into 0
+  @return $value;
+}
+
+// REM CALC 
+// Optionally call with a different base (eg: 8px) to calculate rem: rem-calc(16px 32px 48px, 8px);
+@function rem-calc($values) {
+  $max: length($values);
+
+  @if $max == 1 { @return convert-to-rem(nth($values, 1)); }
+
+  $remValues: ();
+  @for $i from 1 through $max {
+    $remValues: append($remValues, convert-to-rem(nth($values, $i)));
+  }
+  @return $remValues;
+}
+
+//@include remfallback(16px 32px 48px, margin);
+@mixin remfallback($values, $property) {
+    #{$property}: #{$values};
+    #{$property}: rem-calc($values);
+}

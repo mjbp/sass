@@ -1,0 +1,4 @@
+// grid-column
+@mixin column($num, $total, $gutter) {
+    width: ((100% / $total) * $num) - $gutter;
+}
