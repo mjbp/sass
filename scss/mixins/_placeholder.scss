@@ -1,0 +1,9 @@
+// placeholder
+// usage: @include placeholder(#000);
+@mixin placeholder($color) {
+    ::-webkit-input-placeholder {$color}
+    ::-moz-placeholder {$color} /* FF 19+ */
+    :-moz-placeholder {$color} /* FF 18- */
+    :-ms-input-placeholder {$color}
+    .placeholder {$color} /* for the polyfill */
+}
